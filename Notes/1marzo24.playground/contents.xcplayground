@@ -3,5 +3,6 @@
     <pages>
         <page name='Untitled Page'/>
         <page name='Functional programming'/>
+        <page name='Protocolos'/>
     </pages>
 </playground>
