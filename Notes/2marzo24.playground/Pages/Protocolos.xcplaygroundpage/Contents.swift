@@ -55,13 +55,9 @@ struct Person {
 }
 
 //para que nuestra estructura conforme al protocolo
-struct Department: CustomStringConvertible {
+struct Department {
     let name: String
     var people: [Person]
-    
-    var description: String {
-        return "\(name) and has \(people.count) people"
-    }
     
     mutating func add(_ person: Person) {
         people.append(person)
@@ -93,6 +89,13 @@ struct Department: CustomStringConvertible {
         default: fatalError("Invalid row")
         }
         return item
+    }
+}
+
+// MARK: - You made the Department type conform to the CostumSringConvertible protocol
+extension Department: CustomStringConvertible {
+    var description: String {
+        return "Department: \(name)"
     }
 }
 
@@ -132,3 +135,4 @@ hrDepartment is TableDataSource //porque Department conforma TableDataSource
 
 
 //: [Next](@next)
+
